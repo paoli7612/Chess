@@ -1,6 +1,7 @@
 Pawn = require('pieces/pawn')
 Tower = require('pieces/tower')
 Horse = require('pieces/horse')
+Bishop = require('pieces/bishop')
 
 function pawns(boss, team, y, t)
     for x=0, 7 do
@@ -14,6 +15,8 @@ function Team(boss, t)
         team.pieces = {
             Tower(boss, 0, 0, t),
             Horse(boss, 1, 0, t),
+            Bishop(boss, 2, 0, t),
+            Bishop(boss, 5, 0, t),
             Horse(boss, 6, 0, t),
             Tower(boss, 7, 0, t)
         }
@@ -22,6 +25,8 @@ function Team(boss, t)
         team.pieces = {
             Tower(boss, 0, 7, t),
             Horse(boss, 1, 7, t),
+            Bishop(boss, 2, 7, t),
+            Bishop(boss, 5, 7, t),
             Horse(boss, 6, 7, t),
             Tower(boss, 7, 7, t)
         }
