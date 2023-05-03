@@ -1,18 +1,21 @@
 function Piece(boss, x, y, team)
+    print("new piece", team)
     local piece = {
         x = x,
         y = y, 
         team = team
     }
-    
+    image = love.graphics.newImage('spritesheet.png')
+    if team then
+        piece.quad = love.graphics.newQuad(5*128, 128, 128, 128, image:getDimensions())
+    else
+        piece.quad = love.graphics.newQuad(5*128, 0, 128, 128, image:getDimensions())
+    end
+        
     function piece.draw() 
         local S = boss.board.S
-        if piece.team then
-            love.graphics.setColor(0, 1, 1)
-        else
-            love.graphics.setColor(1, 0, 1)
-        end
-        love.graphics.rectangle('fill', piece.x * S, piece.y * S, S, S )
+        love.graphics.setColor(1, 1, 1)
+        love.graphics.draw(image, piece.quad, piece.x*S, piece.y*S, 0, S/128, S/128)
     end
     return piece
 end
