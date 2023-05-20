@@ -1,4 +1,5 @@
 local Board = require('board')
+local Match = require('match')
 local Team = require('team')
 
 function Boss()
@@ -7,6 +8,8 @@ function Boss()
     }
     team1 = Team(boss, true)
     team2 = Team(boss, false)
+
+    boss.match = Match(team1, team2)
 
     function boss.quit()
         love.event.quit()
@@ -30,5 +33,9 @@ end
 function love.keypressed(key, scancode, isrepeat)
     if key == 'escape' then
         boss.quit()
-    end
+    end 
+end
+
+function love.mousepressed( x, y, button, istouch, presses )
+    print(boss.grill)
 end

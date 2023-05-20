@@ -37,15 +37,14 @@ function Team(boss, t)
             Tower(boss, 7, 7, t)
         }
         pawns(boss, team, 6, t)
-
     end
-
 
     function team.draw()
         for k,v in pairs(team.pieces) do
             v.draw()
         end	
     end
+    
     return team
 end
 
