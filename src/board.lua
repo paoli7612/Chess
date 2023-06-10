@@ -2,7 +2,7 @@ function Board()
     local board = {
         S = 64,
         X = 8,
-        Y = 8,
+        Y = 8
     }
     board.W = board.X * board.S
     board.H = board.Y * board.S

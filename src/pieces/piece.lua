@@ -1,8 +1,8 @@
-function Piece(boss, x, y, team)
-    print("new piece", team)
+function Piece(boss, x, y, team, name)
     local piece = {
         x = x,
         y = y, 
+        name = name,
         team = team
     }
     image = love.graphics.newImage('spritesheet.png')
@@ -16,6 +16,10 @@ function Piece(boss, x, y, team)
         local S = boss.board.S
         love.graphics.setColor(1, 1, 1)
         love.graphics.draw(image, piece.quad, piece.x*S, piece.y*S, 0, S/128, S/128)
+    end
+
+    function piece.move(x, y)
+        print("[non implementato piece.move ]", piece.name)
     end
     return piece
 end

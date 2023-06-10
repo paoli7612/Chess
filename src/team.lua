@@ -44,6 +44,14 @@ function Team(boss, t)
             v.draw()
         end	
     end
+
+    function team.getPiece(x, y)
+        for k, v in pairs(team.pieces) do
+            if v.x == x and v.y == y then
+                return v
+            end
+        end
+    end
     
     return team
 end
