@@ -12,13 +12,12 @@ function Match(team1, team2)
 
     function match.click(x, y)
         piece = match.getPiece(x, y)
-        if piece then
-            print("CLICCATO SU", piece.x, piece.y)
-        end
         if piece and piece.team == match.team then
+            print("SELEZIONATO", piece.name, piece.x, piece.y)
             match.selected = piece 
-        else
-            match.selected.move(x, y)
+        elseif match.selected and match.selected.move(x, y) then
+            match.selected = nil
+            match.team = not match.team
         end
     end
 
